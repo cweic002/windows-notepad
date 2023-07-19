@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/windows10.png</file>
+        <file>images/Windows_Notepad_Icon.png</file>
+    </qresource>
+</RCC>
