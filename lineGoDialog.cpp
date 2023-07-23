@@ -14,7 +14,7 @@ LineGoDialog::LineGoDialog(QTextEdit * textEdit,QWidget * parent):
     lineEdit = new QLineEdit();
     lineEdit->setValidator(validator);
 
-    connect(lineEdit,&LineEditState::textChanged,[this,validator](const QString &text){
+    connect(lineEdit,&QLineEdit::textChanged,[this,validator](const QString &text){
         if(text.isEmpty()){
             buttonJump->setEnabled(false);
         }else{

@@ -1,7 +1,4 @@
 #include "pagesettings.h"
-#include <QPageSize>
-#include <QDebug>
-#include <QProxyStyle>
 
 PageSettings::PageSettings(QWidget *parent):
     QDialog(parent),
@@ -221,7 +218,7 @@ lineEdit(new QLineEdit){
 }
 
 void PageSettings::setStyleTextBrowser(int){
-    auto sizePoint = QPageSize(size()).size(QPageSize::Unit::Millimeter);
+    //auto sizePoint = QPageSize(size()).size(QPageSize::Unit::Millimeter);
     QString top=padding.top.spinBox->text();
     QString right=padding.right.spinBox->text();
     QString bottom=padding.bottom.spinBox->text();

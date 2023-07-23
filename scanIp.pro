@@ -18,6 +18,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     IFile.cpp \
+    State.cpp \
+    StateTemplate.cpp \
     aboutProgramDialog.cpp \
     findDialog.cpp \
     lineGoDialog.cpp \
@@ -30,7 +32,6 @@ HEADERS += \
     aboutProgramDialog.h \
     findDialog.h \
     iFille.h \
-    lineEditState.h \
     lineGoDialog.h \
     mainwindow.h \
     pagesettings.h

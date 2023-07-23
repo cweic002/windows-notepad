@@ -1,6 +1,7 @@
 #ifndef PAGESETTINGS_H
 #define PAGESETTINGS_H
 #include "State.h"
+#include <QtWidgets>
 
 class PageSettings : public QDialog
 {

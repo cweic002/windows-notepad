@@ -1,7 +1,7 @@
 #ifndef LINEGODIALOG_H
 #define LINEGODIALOG_H
 
-#include "lineEditState.h"
+#include<QtWidgets>
 
 class LineGoDialog:public QDialog
 {

@@ -2,6 +2,7 @@
 #define SEARCHDIALOG_H
 
 #include "State.h"
+#include<QtWidgets>
 
 class FindDialog : public QDialog
 {
