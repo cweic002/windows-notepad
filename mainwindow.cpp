@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent),
       textEdit(new QTextEdit()),
       zoom(1),
+      labelPagePosition(new QLabel("Стр 0, стлб 0")),
+      labelZoom(new QLabel("100%")),
       statusBar(new QStatusBar(this)),
       file(new ap::SaveFileCreate()),
       findDialog(new FindDialog(textEdit,this)),
@@ -62,17 +64,17 @@ MainWindow::MainWindow(QWidget *parent)
 
     QWidget * widgetEmptiness = new QWidget();
 
-    labelPagePosition = new QLabel("Стр 16, стлб 112");
-    labelPagePosition->setContentsMargins(0,0,70,0);
+    labelPagePosition->setContentsMargins(10,0,10,0);
 
-    labelZoom = new QLabel("100%");
-    labelZoom->setContentsMargins(0,0,10,0);
+    connect(textEdit,&QTextEdit::cursorPositionChanged,this,&MainWindow::labelPagePositionUpdate);
+
+    labelZoom->setContentsMargins(5,0,5,0);
 
     QLabel * labelWindows = new QLabel("Winddows(SRLF)");
-    labelWindows->setContentsMargins(0,0,20,0);
+    labelWindows->setContentsMargins(10,0,10,0);
 
     QLabel * labelEncoding = new QLabel("UTF-8");
-    labelEncoding->setContentsMargins(0,0,60,0);
+    labelEncoding->setContentsMargins(30,0,30,0);
 
     statusBar->addPermanentWidget(widgetEmptiness);
     statusBar->addPermanentWidget(labelPagePosition);
@@ -421,8 +423,13 @@ void MainWindow::setZoom(){
     this->textEdit->setFont(font);
 }
 
-//menu View
+void MainWindow::labelPagePositionUpdate(){
+    auto line=QString::number(this->textEdit->textCursor().blockNumber()+1);
+    auto column=QString::number(this->textEdit->textCursor().columnNumber()+1);
+    labelPagePosition->setText("Стр "+line+", стлб "+column);
+}
 
+//menu View
 
 QMenu * MainWindow::menuReference(){
     auto about_program = new QAction(this);

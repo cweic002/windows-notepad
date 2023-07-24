@@ -37,6 +37,7 @@ private:
     QMenu * menuView();
     QMenu * menuReference();
     void setZoom();
+    void labelPagePositionUpdate();
     std::unique_ptr<ap::IFile> file;
     FindDialog * findDialog;
     PageSettings * pageSettings;
