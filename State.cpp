@@ -1,13 +1,13 @@
 #include "State.h"
 
 void State::saveState(){
-    for(auto iter=stateArg.begin(),iterEnd=stateArg.end(); iter!=iterEnd; ++iter){
-        (*iter)->saveState();
+    for(auto & iter : stateArg){
+        iter->saveState();
     }
 }
 
-void State::restoreState(){
-    for(auto iter=stateArg.begin(), iterEnd=stateArg.end(); iter!=iterEnd; ++iter){
-        (*iter)->restoreState();
+void State::restoreState() {
+    for (auto& iter : stateArg) {
+        iter->restoreState();
     }
 }

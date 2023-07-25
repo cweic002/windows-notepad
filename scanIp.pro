@@ -19,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     IFile.cpp \
     State.cpp \
+    StateArg.cpp \
     StateTemplate.cpp \
     aboutProgramDialog.cpp \
     findDialog.cpp \
@@ -28,7 +29,9 @@ SOURCES += \
     pagesettings.cpp
 
 HEADERS += \
+    Restore.h \
     State.h \
+    StateArg.h \
     aboutProgramDialog.h \
     findDialog.h \
     iFille.h \
