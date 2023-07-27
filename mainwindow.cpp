@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "pagesettings.h"
+#include "MainWindow.h"
+#include "PageSettings.h"
 
 #include <QPrinter>
 #include <QPrintDialog>
@@ -190,16 +190,13 @@ void MainWindow::file_print_triggered()
     if (dialog->exec() == QDialog::Accepted){
         QTextDocument * document=new QTextDocument(this);
         document->setHtml(textEdit->toHtml());
-        // Настраиваем параметры страницы
         QPageSize pageSize(pageSettings->size());
         QMargins margins=pageSettings->margins();
         QPageLayout::Orientation orientation(pageSettings->orientation);
         QPageLayout pageLayout(pageSize,orientation, margins,QPageLayout::Unit::Millimeter);
         document->setPageSize(pageLayout.fullRect(QPageLayout::Unit::Point).size());
-        //настройка принтера(QPrinter::Orientation)orientation
         printer.setOrientation(static_cast<QPrinter::Orientation>(orientation));
         printer.setPageMargins(margins,QPageLayout::Unit::Millimeter);
-        //настройка принтера
         document->print(&printer);
     }
 }

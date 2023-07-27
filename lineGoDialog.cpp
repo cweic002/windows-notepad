@@ -1,4 +1,4 @@
-#include "lineGoDialog.h"
+#include "LineGoDialog.h"
 
 LineGoDialog::LineGoDialog(QTextEdit * textEdit,QWidget * parent):
     QDialog(parent),textEdit(textEdit){

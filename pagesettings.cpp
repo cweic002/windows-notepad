@@ -1,4 +1,4 @@
-#include "pagesettings.h"
+#include "PageSettings.h"
 
 PageSettings::PageSettings(QWidget *parent):
     QDialog(parent),

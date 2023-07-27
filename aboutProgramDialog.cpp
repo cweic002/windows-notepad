@@ -1,4 +1,4 @@
-#include "aboutProgramDialog.h"
+#include "AboutProgramDialog.h"
 
 AboutProgramDialog::AboutProgramDialog(QWidget * parent):QDialog(parent){
     setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint |
